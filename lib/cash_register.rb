@@ -10,15 +10,12 @@ class CashRegister
     @items = []
   end
   
-  def total
-    @total
-  end
-  
   def add_item(title, price, quantity=1)
     sub_total = price.to_f * quantity.to_f
-    @total += sub_total
+    self.total += sub_total
     @items.fill(title, @items.length, quantity)
-    @price = price * quantity
+    self.price = price * quantity
+    #binding.pry
   end
 
   def apply_discount
